@@ -1,0 +1,44 @@
+<script>
+
+    function criaPessoa(nome, sobrenome){
+        const pessoaPrototype = {
+            apresentar(){
+                console.log(`${this.nome} está falando`)
+            }
+        }
+
+        return Object.create(pessoaPrototype, {
+            nome: { value: nome }, // É possivel colocar wiritable, enumarable e etc nessas chaves, neste exemplo colocamos apenas o value
+            sobrenome: { value: sobrenome }
+        })
+
+    }
+ 
+    const p1 = criaPessoa('Gabriel','Bunhak')
+
+    p1.apresentar()
+
+    console.log(p1)
+
+    //Com spred operator 
+
+    const falar = {
+            falar(){
+                console.log(`${this.nome} está falando.`)
+            }
+        }
+        
+        const metodos = { ...falar, }
+
+        function criaPessoa1(nome){
+            return {
+                nome
+            }
+        }
+        
+        const pessoa1 = criaPessoa1('gab')
+        Object.setPrototypeOf(pessoa1,metodos)
+
+        pessoa1.falar()
+
+</script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: darkcyan;
+            font-family: sans-serif;
+        }
+
+        section#container{
+            width: 80%;
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+            margin: 20px auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <section id="container">
+        <h1>Lorem ipsum dolor sit amet</h1>
+
+
+
+    </section>
+
+
+    <script>
+
+        var element_Html = [
+            { div: document.createElement('div'), texto: document.createTextNode('Frase 2') },
+            { p: document.createElement('p'), texto: document.createTextNode('Frase 1') },
+            { footer: document.createElement('footer'), texto: document.createTextNode('Frase 3') },
+            { section: document.createElement('section'), texto: document.createTextNode('Frase 4') }
+        ]
+
+        let div_container = document.createElement('div')
+
+        element_Html[0].div.appendChild(element_Html[0].texto)
+        element_Html[1].p.appendChild(element_Html[1].texto)
+        element_Html[2].footer.appendChild(element_Html[2].texto)
+        element_Html[3].section.appendChild(element_Html[3].texto)
+
+        div_container.appendChild(element_Html[1].p)
+        div_container.appendChild(element_Html[0].div)
+        div_container.appendChild(element_Html[2].footer)
+        div_container.appendChild(element_Html[3].section)
+
+        document.getElementById('container').appendChild(div_container)
+     
+    </script>
+
+</body>
+</html>

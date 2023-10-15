@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: darkcyan;
+            font-family: sans-serif;
+        }
+
+        section#container{
+            width: 80%;
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+            margin: 20px auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <section id="container">
+        <h1>Lorem ipsum dolor sit amet</h1>
+
+
+
+    </section>
+
+
+    <script>       
+
+        var elementos = [
+            { tag: 'p', texto: 'Frase 1' },
+            { tag: 'div', texto: 'Frase 2' },
+            { tag: 'footer', texto: 'Frase 3' },
+            { tag: 'section', texto: 'Frase 4' }
+        ]
+
+        let div_container = document.createElement('div')
+
+        for(var cont = 0; cont < 4; cont ++){
+            elementos[cont].tag = document.createElement(elementos[cont].tag)
+            elementos[cont].texto = document.createTextNode(elementos[cont].texto)
+            elementos[cont].tag.appendChild(elementos[cont].texto)
+            div_container.appendChild(elementos[cont].tag)
+        }
+
+        document.getElementById('container').appendChild(div_container)
+
+    </script>
+
+</body>
+</html>

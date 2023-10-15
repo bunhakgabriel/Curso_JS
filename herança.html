@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+    //Imagine que você vai criar um site de ecommerce
+    //O site vende 'camisetas' e 'canecas'
+    //Oque esses 2 items tem em comum ? esses 2 items são produtos, podemos criar uma função que cria produtos, ou seja, abstrair esses itens
+    //Imagine que as camisas podem ter diferentes cores e as canecas diferentes materiais de fabricação
+    //Ainda podemos ter uma possibilidade de aumento e desconto em ambos os produtos
+
+    function Produto(nome,preco){
+        this.nome = nome,
+        this.preco = preco
+    }
+
+    Produto.prototype.aumento = function(quantia){
+        this.preco += quantia
+    }
+
+    Produto.prototype.desconto = function(quantia){
+        this.preco -= quantia
+    }    
+
+    function Camiseta(nome, preco, cor){
+        Produto.call(this, nome, preco)
+        this.cor = cor
+        //O this sera o objeto criado a partir da função construtora 'Camiseta'.
+        //O construtor produto cria molde para 'nome' e 'preço', o construtor Camiseta define o preço, isso quer dizer
+        //que não precisamos delegar todas as funções para o construtor produto, podemos também criar propriedades no
+        //Construtor Camiseta que o objeto 'camiseta' irá reconhecer (A camiseta tem uma propriedade a mais que o produto original)
+    }
+    Camiseta.prototype = Object.create(Produto.prototype)
+    Camiseta.prototype.constructor = Camiseta
+
+    //Na linha 39 criamos um objeto vazio e atribuimos como protótipo desse objeto vazio o Produto,
+    //No fim das contas o prototype da Camiseta vai ser o prototype do Produto
+
+    function Caneca(nome, preco, material, estoque){
+        Produto.call(this, nome, preco)
+        this.material = material
+        this.estoque = estoque
+    }
+    Caneca.prototype = Object.create(Produto.prototype)
+    Caneca.prototype.constructor = Caneca
+
+    //Produto.call() significa que estamos herdando caracteristicas(métodos e propriedades) do Produto
+
+    const produto = new Produto('gen', 111)
+    const camiseta = new Camiseta('Regata', 50, 'Preta')
+    const caneca = new Caneca('Copo', 15, 'Vidro', 5)
+    
+    console.log(produto)
+    camiseta.aumento(10)
+    console.log(camiseta)
+    caneca.desconto(5)
+    console.log(caneca)
+
+</script>
+
+</body>
+</html>

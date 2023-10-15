@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(4, 21, 36);
+        }
+        .slide{
+            width: 1024px;
+            height: 576px;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.5s;
+        }
+        .slides{
+            width: 8000px;
+            display: flex;
+        }
+        .imagens img{
+            width: 1024px;
+            height: 576px;
+        }
+        #atual{
+            transition: all 2s;
+        }
+        .btn{
+            position: absolute;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.5s;
+            font-size: 1.7em;
+            margin-top: -5px;
+        }
+        .btn:hover{
+            transform: scale(2);
+        }
+        #voltar{
+            top: 50%;
+            left: 10%;
+        }
+        #next{
+            top: 50%;
+            right: 10%;
+        }
+        .balls{
+            position: absolute;
+            width: 1024px;
+            display: flex;
+            justify-content: center;
+            margin-top: -45px;
+        }
+        .balls div{
+            transition: all 0.5s;
+            border: 3px solid white;
+            padding: 6px;
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .balls div:hover{
+            background: white;
+        }
+        .imagem-atual{
+            transition: all 0.5s;
+            background: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="slide">
+        <div class="slides">
+
+            <div id="voltar" class="btn">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div id="next" class="btn">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <div id="atual" class="imagens">
+                <img src="https://wowslider.com/sliders/demo-44/data1/images/fireworks.jpg">
+            </div>
+            <div class="imagens">
+                <img src="https://wowslider.com/sliders/demo-44/data1/images/cityscape.jpg">
+            </div>
+            <div class="imagens">
+                <img src="https://wowslider.com/sliders/demo-72/data1/images/25h.jpg">
+            </div>
+            <div class="imagens">
+                <img src="https://wowslider.com/sliders/demo-72/data1/images/114h.jpg">
+            </div>
+
+        </div>
+
+        <div class="balls">
+        </div>
+
+    </div>
+
+    <script>
+
+        var balls = document.querySelector('.balls')
+        var quant = document.querySelectorAll('.slides .imagens')
+        var atual = 0
+        var imagem = document.getElementById('atual')
+        var next = document.getElementById('next')
+        var voltar = document.getElementById('voltar')
+        var rolar = true
+
+        for(let i=0; i < quant.length; i++){
+            var div = document.createElement('div')
+            div.id = i
+            balls.appendChild(div)
+        }
+        document.getElementById('0').classList.add('imagem-atual')
+
+        var pos = document.querySelectorAll('.balls div')
+
+        for(let i=0; i< pos.length; i++){
+            pos[i].addEventListener('click', function(){
+                atual = pos[i].id
+                rolar = false
+                slide()
+            })
+        }
+
+        voltar.addEventListener('click', () => {
+            atual--
+            rolar = false
+            slide()
+        })
+        next.addEventListener('click', () => {
+            atual++
+            rolar = false
+            slide()
+        })
+
+        function slide(){
+            if(atual >= quant.length){
+                atual = 0
+            }
+            else if(atual < 0){
+                atual = quant.length - 1
+            }
+            document.querySelector('.imagem-atual').classList.remove('.imagem-atual')
+            imagem.style.marginLeft = -1024*atual+'px'
+            document.getElementById('atual').classList.add('imagem-atual')
+        }
+        setInterval( () => {
+            if(rolar){
+                atual++
+                slide()
+            }
+            else{
+                rolar = true
+            }
+        }, 1000000)
+
+    </script>
+
+</body>
+</html>

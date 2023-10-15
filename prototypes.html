@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const objetoTeste = new Object
+        
+        Object.prototype.acenar = function(){
+            console.log("Olá, eu sou um objeto") 
+        }
+
+        Object.prototype.nome = 'novo objeto'
+
+        console.dir(objetoTeste.acenar())
+        console.log(objetoTeste.nome)
+        console.log(Object.prototype === objetoTeste.__proto__)
+
+    </script>
+
+</body>
+</html>
+
+

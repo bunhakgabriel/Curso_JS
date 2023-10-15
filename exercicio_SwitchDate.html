@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: darkcyan;
+            font-family: sans-serif;
+        }
+
+        div#container{
+            width: 700px;
+            border-radius: 10px;
+            background-color: white;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="container">
+
+        <h1 id="retorno"></h1>
+
+    </div>
+
+    <script>
+
+function atualizar(){
+
+        const data = new Date()
+
+        function encontreDiaSemana(x){
+            if(x === 0){ return 'Domingo' }
+            else if(x === 1){ return 'Segunda-feira'}
+            else if(x === 2){ return 'Terça-feira'}
+            else if(x === 3){ return 'Quarta-feira'}
+            else if(x === 4){ return 'Quinta-feira'}
+            else if(x === 5){ return 'Sexta-feira'}
+            else if(x === 6){ return 'Sábado'}
+            else { return '' }
+        }
+
+        function encontreMes(y){
+            if(y === 0) { return 'janeiro' }
+            else if(y === 1) { return 'Fevereiro' }
+            else if(y === 2) { return 'Março' }
+            else if(y === 3) { return 'Abril' }
+            else if(y === 4) { return 'Maio' }
+            else if(y === 5) { return 'Junho' }
+            else if(y === 6) { return 'Julho' }
+            else if(y === 7) { return 'Agosto' }
+            else if(y === 8) { return 'Setembro' }
+            else if(y === 9) { return 'Outubro' }
+            else if(y === 10) { return 'Novembro' }
+            else if(y === 11) { return 'Dezembro' }
+            else { return '' }
+        }
+
+        function verificarZero(z){
+            if(z < 10){ z = '0'+ z }
+            return z
+        }
+        
+        let diaSemana = data.getDay()
+        diaSemana = encontreDiaSemana(diaSemana)
+        let hora = data.getHours()
+        hora = verificarZero(hora)
+        let mes = data.getMonth()
+        mes = encontreMes(mes)
+        let minutos = data.getMinutes()
+        minutos = verificarZero(minutos)
+        let segundos = data.getSeconds()
+        segundos = verificarZero(segundos)
+
+        const diaMes = data.getDate()
+        const ano = data.getFullYear()
+
+        const retorno = document.getElementById('retorno')
+        retorno.innerText = `${diaSemana}, ${diaMes} de ${mes} de ${ano}  ${hora}:${minutos}:${segundos}`
+
+    }        
+
+        setInterval(atualizar, 1000)
+
+    </script>
+
+</body>
+</html>

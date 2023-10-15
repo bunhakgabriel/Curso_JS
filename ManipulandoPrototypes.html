@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+const objA = {
+    chaveA: 'A'
+}
+
+const objB = {
+    chaveB: 'B'
+}
+
+const objC = {
+    chaveC: 'C'
+}
+
+Object.setPrototypeOf(objB, objA)
+Object.setPrototypeOf(objC, objB)
+
+Object.prototype.nome = 'eu sou um objeto'
+
+console.log(objC)
+
+    </script>
+
+</body>
+</html>

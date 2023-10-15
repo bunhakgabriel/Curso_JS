@@ -1,0 +1,58 @@
+html, body, div{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 16px;
+    height: 100vh;
+}
+
+.container div{
+    overflow: hidden;
+}
+
+.zoom-img{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    object-fit: cover;
+    object-position: center center;
+}
+
+img:hover{
+    transform: scale(1.5);
+    transition: 0.7s;
+}
+
+#lightboxBg{
+    position: fixed;
+    z-index: 150;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(150, 150, 150, .6);
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+#lightboxBg.active{
+    display: grid;
+    place-items: center;
+}
+
+#lightboxImg{
+    max-width: 50%;
+    max-height: 50%;
+    border: 4px solid white;
+    box-shadow: 1px 3px 20px rgba(0,0,0,.5);
+}

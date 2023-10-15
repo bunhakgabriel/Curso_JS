@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #fconf{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 1px solid #000;
+            background-color: #888;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <p>LocalStorage - Curso de JavaScript</p>
+    <p id="painel"></p>
+
+    <button onclick="mostraConf()">configurações</button>
+    
+    <form name="dados" id="fconf">
+        <label>Nome:</label><br>
+        <input type="text" name="fnome" id="fnome" size="20"><br><br>
+        <label>Cor fundo:</label><br>
+        <input type="radio" name="fcorF" onclick="defineCor(1,'#000')">Preto<br>
+        <input type="radio" name="fcorF" onclick="defineCor(1,'#fff')">Branco<br>
+        <input type="radio" name="fcorF" onclick="defineCor(1,'#f00')">Vermelho<br>
+        <input type="radio" name="fcorF" onclick="defineCor(1,'#0f0')">Verde<br>
+        <input type="radio" name="fcorF" onclick="defineCor(1,'#00f')">Azul<br><br>
+        <label>Cor texto:</label><br>
+        <input type="radio" name="fcorT" onclick="defineCor(2,'#000')">Preto<br>
+        <input type="radio" name="fcorT" onclick="defineCor(2,'#fff')">Branco<br><br>
+        <input type="button" value="Gravar" onclick="gravar()"> 
+
+    </form>
+
+    <script>
+
+        var corFundo, corTexto, nome
+
+        function inicia(){
+            if(localStorage.nome){
+            corFundo = localStorage.colorF
+            corTexto = localStorage.colorT
+            nome = localStorage.name
+            defineCor(1,corFundo)
+            defineCor(2,corTexto)
+            document.getElementById('painel').innerHTML = 'Bem vindo ' + nome + "<hr>" 
+        }
+        }
+
+        function gravar(){
+            var form = document.getElementById('fconf')
+            nome = document.getElementById('fnome').value
+            localStorage.setItem('colorF', corFundo)
+            localStorage.setItem('colorT', corTexto)
+            localStorage.setItem('name', nome)
+            form.style.display = 'none'
+
+        }
+
+        function defineCor(op,cor){
+            if(op === 1){
+                document.body.style.backgroundColor = cor
+                corFundo = cor
+            } else {
+                document.body.style.color = cor
+                corTexto = cor
+            }
+        }
+
+        function mostraConf(){
+            var form = document.getElementById('fconf')
+            form.style.display = 'block'
+        }
+
+        document.addEventListener('load',inicia)
+
+
+    </script>
+
+</body>
+</html>

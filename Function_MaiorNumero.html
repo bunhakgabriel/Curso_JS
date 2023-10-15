@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Primeiro Número <input type="text" id="numero1">
+    Segundo Número <input type="text" id="numero2">
+    <button id="botao">Clique aqui</button>
+    <h3 id="resp"></h3>
+
+    <script>
+
+        let resp = document.getElementById('resp')
+        let botao = document.getElementById('botao')
+        botao.addEventListener('click', retorneMaior)
+
+        function retorneMaior(){
+            
+            let num1 = Number(document.getElementById('numero1').value)
+            let num2 = Number(document.getElementById('numero2').value)
+            let maior = num1 
+
+            if(num2 > num1){
+                maior = num2
+            }
+            
+            resp.innerText = `O maior numero é ${maior}`
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        
+        header, nav, section, article, footer{
+            font-family: sans-serif;
+        } 
+
+        header{
+            background-color: lightcoral;
+        }
+        nav{
+            background-color: aqua;
+        }
+        section{
+            background-color: navajowhite;
+        }
+        article{
+            background-color: aquamarine;
+        }
+        footer{
+            background-color: palevioletred;
+        }
+
+        /* O simbolo '>*' siginifica que todo elemento dentro da classe .grid-wrapper
+        vai ter as configurações da classe */
+
+        .grid-wrapper>*{
+            min-height: 100px;
+            border-radius: 4px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-wrapper{
+            display: grid;
+            grid-template-rows: repeat(4, auto);
+            grid-template-columns: 240px 1fr; 
+            gap: 1rem;
+        }
+
+        header{
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+
+        nav{
+            grid-row: 2 / -2;
+        }
+
+        section{
+            grid-column: 2 / -1;
+        }
+
+        footer{
+            grid-column: 1 / -1;
+            grid-row: -2 / -1;
+        }
+
+        .grid-wrapper>main{ /* estamos selecionando a tag main que é filho direto de .grid-wrapper*/
+            background-color: #ccc;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        article{
+            min-height: 100px;
+            border-radius: 4px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="grid-wrapper">
+        <header>header</header>
+        <nav>nav</nav>
+        <section>section</section>
+            <main>  
+                <article class="a1">article</article>
+                <article class="a2">article</article>
+                <article class="a3">article</article>
+                <article class="a2">article</article>
+                <article class="a1">article</article>
+                <article class="a2">article</article>
+                <article class="a3">article</article>
+                <article class="a2">article</article>
+                <article class="a1">article</article>
+                <article class="a2">article</article>
+                <article class="a3">article</article>
+                <article class="a2">article</article>
+            </main>
+        <footer>footer</footer>
+    </div>
+
+</body>
+</html>

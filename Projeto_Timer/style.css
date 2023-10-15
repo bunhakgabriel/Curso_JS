@@ -1,0 +1,21 @@
+body{
+    background-color: darkcyan;
+    font-family: sans-serif;
+}
+
+div#container{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 600px;
+    margin: 60px auto;
+}
+
+p{
+    font-size: 3.5em;
+}
+
+button, h2, p{
+    margin: 5px 0px;
+}
+

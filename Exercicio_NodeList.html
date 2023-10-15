@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: rgb(17, 86, 102);
+            font-family: sans-serif;
+        }
+
+        section.container{
+            background-color: white;            
+            border-radius: 10px;
+            width: 700px;
+            padding: 20px;
+            margin: 20px auto 20px auto;
+        }
+
+        section.container p{
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="container">
+
+            <h1>Lorem ipsum dolor sit amet</h1>
+
+            <div class="paragrafos">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                <p>Fuga quae voluptatem, id quia nobis dignissimos expedita</p> 
+                <p>mollitia fugiat rerum impedit ad ratione aut facilis rem</p> 
+                <p>eveniet velit esse nisi deleniti?</p>
+            </div>
+
+    </section>
+
+    <script>
+
+        var paragrafos = document.querySelector('.paragrafos')
+        var ps = paragrafos.querySelectorAll('p')
+
+        var estilosBody = getComputedStyle(document.body)
+        var backgroundColorBody = estilosBody.backgroundColor
+        
+        for(i = 0; i < ps.length; i++ ){
+            ps[i].style.backgroundColor = backgroundColorBody
+            ps[i].style.color = 'white'
+        }
+
+
+    </script>
+
+</body>
+</html>

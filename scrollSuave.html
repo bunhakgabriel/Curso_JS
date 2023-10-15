@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        ul{
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            column-gap: 50px;
+            position: fixed;
+            width: 100%;
+            background-color: crimson;
+            padding: 10px;
+            margin-top: 0px;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
+        div{
+            height: 100vh;
+        }
+
+        #pg1{
+            padding-top: 100px;
+            background-color: aqua;
+        }
+
+        #pg2{
+            background-color: greenyellow;
+        }
+
+        #pg3{
+            background-color: royalblue;
+        }
+
+        #pg4{
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <a href="#pg1"><li>pagina1</li></a>
+        <a href="#pg2"><li>pagina2</li></a>
+        <a href="#pg3"><li>pagina3</li></a>
+        <a href="#pg4"><li>pagina4</li></a>
+    </ul>
+    
+    <section>
+        <div id="pg1">
+            pagina1
+        </div>
+        <div id="pg2">
+            pagina2
+        </div>
+        <div id="pg3">
+            pagina3
+        </div>
+        <div id="pg4">
+            pagina4
+        </div>
+    </section>
+
+</body>
+</html>

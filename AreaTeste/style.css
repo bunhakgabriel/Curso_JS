@@ -1,0 +1,63 @@
+#bloco5{
+    width: auto;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #0d1e4be0;
+}
+
+#faq{
+    width: 700px;
+    margin: 0 auto;
+}
+
+#bloco5 h1{
+    color: white;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+.faq-item button{
+    width: 700px;
+    padding: 20px;
+    position: relative;
+    background-color: #0d1e4be0;
+    color: white;
+    border: 0px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.faq-item button:hover{
+    cursor: pointer;
+}
+
+.faq-item button i{
+    position: absolute;
+    right: 15px;
+}
+
+.faq-item .faq-resp {
+    background-color: #f3f3f3;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    margin: 0;
+  }
+  
+  .faq-item .action {
+    max-height: 10rem;
+    padding: 1rem;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .faq-item i{
+    transition: all 0.5s ease-in-out;
+  }
+
+  .faq-item i.rotate{
+    transform: rotate(180deg);
+  }
+
+
+

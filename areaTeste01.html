@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+
+      li{
+         background-color: red;
+         width: 100px;
+         height: 100px;
+      }
+
+   </style>
+
+</head>
+<body>
+   
+   <ul id="lista">
+
+   </ul>
+
+   <script>
+
+      var ul = document.getElementById('lista')
+
+      ul.innerHTML = `<li>
+                    <span class="texto">teste</span>
+                    <span class="icones">
+                        <i class="fa-sharp fa-xs fa-solid fa-copy" style="color: #999da3;"></i>
+                        <i class="fa-solid fa-pen fa-xs" style="color: #9fa0a3;"></i>
+                        <i class="fa-solid fa-xs fa-circle-xmark" style="color: #9fa0a3;"></i>
+                    </span>
+                  </li>`
+
+   </script>
+<script src="https://kit.fontawesome.com/432b49bf25.js" crossorigin="anonymous"></script>
+</body>
+</html>

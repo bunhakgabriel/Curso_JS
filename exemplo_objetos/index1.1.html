@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            padding-left: 20px;
+            font-family: sans-serif;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <p>Marca <input type="text" id="marca"></p>
+    <p>Nome <input type="text" id="nome"></p>
+    <p>Cor <input type="text" id="cor"></p>
+    <p>Ano <input type="text" id="ano"></p>
+
+    <button onclick="cadastro()">Cadastrar</button>
+
+    <h3 id="retorno"></h3>
+
+    <script>
+
+        function cadastro(){
+
+            let retorno = document.getElementById('retorno')
+
+            let carro1 = {
+                m: document.getElementById('marca').value,
+                n: document.getElementById('nome').value,
+                c: document.getElementById('cor').value,
+                a: document.getElementById('ano').value,
+
+                escreva(){
+                    retorno.innerHTML = `${carro1.m} ${carro1.n} ${carro1.c} ${carro1.a}`
+                }
+
+            }
+
+            carro1.escreva();    
+
+            
+
+        }
+
+      
+
+    </script>

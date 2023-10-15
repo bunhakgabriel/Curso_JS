@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: mediumseagreen;
+            font-family: sans-serif;
+        }
+
+        #container{
+            margin: 10px auto;
+            width: 550px;
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        h3{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        input{
+            width: 540px;
+            height: 25px;
+        }
+
+        input#enviar{
+            margin: 10px auto; 
+            width: 550px;
+            height: 35px;
+            background-color: mediumseagreen;
+            border: 0px;
+        }
+
+        input#enviar:hover{
+            background-color: mediumspringgreen;
+        }
+
+        span{
+            font-size: 0.7em;
+            margin: 5px 0px;
+        }
+
+        ul#ul li{
+            margin-top: 8px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="container">
+
+        <h1>Formulário de cadastro</h1>
+
+        <ul id="informacoes">
+            <li>Nenhum campo pode estar vazio</li>
+            <li>Usuário só poderá conter letras e/ou números</li>
+            <li>Usuário deverá ter entre 3 a 12 caracteres</li>
+            <li>Senha precisa ter entre 6 e 12 caracteres</li>
+        </ul>
+
+        <form id="form1">
+
+            <h3>Nome:</h3><input type="text" id="nome">
+            <span id="errorNome"></span>
+
+            <h3>Sobrenome:</h3><input type="text" id="sobrenome">
+            <span id="errorSobrenome"></span>
+
+            <h3>CPF:</h3><input type="text" id="cpf">
+            <span id="errorCpf"></span>
+
+            <h3>Usuário:</h3><input type="text" id="usuario"> 
+            <span id="errorUsuário"></span>
+
+            <h3>Senha:</h3><input type="password" id="senha1">
+            <span id="errorSenha"></span>
+
+            <h3>Repetir senha:</h3><input type="password" id="senha2">
+            <span id="errorRepetirSenha"></span>
+
+            <input type="submit" id="enviar">
+
+        </form>
+
+    </div>
+    <script src="EX-validandoUmFormulario.js"></script>
+</body>
+</html>

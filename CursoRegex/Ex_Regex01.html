@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            font-family: sans-serif;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+</body>
+
+    CPF: <input id="cpf" type="text"><br><br>
+    Email: <input id="email" type="text"><br><br>
+    <button id="btn">Verificar</button> <button id="btn1">limpar</button><br>
+    <h3 id="resp"></h3>
+
+    <script>
+
+        const cpf = document.getElementById('cpf')
+        const email = document.getElementById('email')
+        const resp = document.getElementById("resp")
+        const btn = document.getElementById('btn')
+        const btn1 = document.getElementById('btn1')
+        
+        const regexCpf = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/
+        const regexEmail = /^\w+@[a-z0-9]+\.com/
+
+        function verificar(cpf,email){
+            if(regexCpf.test(cpf)){ cpf = 'Cpf válido' } 
+            else { cpf = 'Cpf invalido' } 
+
+            if(regexEmail.test(email)){ email = 'Email válido' } 
+            else { email = 'Email invalido' } 
+
+            resposta(cpf,email)
+        }
+
+        function resposta(x,y){
+            resp.innerHTML = `${x} <br>`
+            resp.innerHTML += y
+        }
+
+        btn.addEventListener('click', function(){
+            verificar(cpf.value,email.value)
+        })
+
+        btn1.addEventListener('click', function(){
+            resp.innerHTML = ''
+        })
+
+    </script>
+
+</html>

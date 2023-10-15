@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: darkkhaki;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Prova de Matematica</h1>
+
+    <p>1) qual é o valor da expressão (10 + 4) . 5 :</p>
+
+    <ul>
+        <li><input type="radio" name="resp" value="30"> 30 </li>
+        <li><input type="radio" name="resp" value="54"> 54 </li>
+        <li><input type="radio" name="resp" value="70"> 70 </li>
+        <li><input type="radio" name="resp" value="20"> 20 </li>
+    </ul>
+
+    <button onclick="finish()" >Concluir</button>
+
+    <div id="retorno"></div>
+
+    <script>
+
+        function finish(){
+            let retorno = document.getElementById('retorno')
+            let resp = document.querySelector('input[name=resp]:checked').value
+            
+            if(resp == 70){
+                retorno.innerHTML = `resposta correta`
+            } else{
+                retorno.innerHTML = `resposta incorreta`
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
