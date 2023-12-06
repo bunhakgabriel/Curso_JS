@@ -4,23 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+
+        input{
+            margin-bottom: 10px;
+        }
+
+        button{
+            margin-right: 10px;
+        }
+
+    </style>
+
 </head>
 <body>
-    
-    <h1>Titulo</h1>
-    <div>
-       <p>paragrafo 1</p>
-       <p>paragrafo 2</p>
-       <p>paragrafo 3</p>
-       <p>paragrafo 4 </p>
-       <p>paragrafo 5</p>
-    </div>
 
+
+        <ul id="lista">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+        </ul>
+
+        <ul id="resp">
+
+        </ul>
+    
     <script>
 
-        let paragrafos = document.getElementsByTagName('p')
+        let ul = document.getElementById('resp')
+        let li = document.getElementById('lista').innerHTML
+        
+        let json = JSON.stringify(li)
+        localStorage.dados = json
 
-        console.log(paragrafos)
+        let dados = JSON.parse(localStorage.dados)
+
+        ul.innerHTML = dados
 
     </script>
 

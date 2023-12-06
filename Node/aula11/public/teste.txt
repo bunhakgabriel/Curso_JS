@@ -1,0 +1,6 @@
+lorem ipsum
+
+para renderizar essa pagina use como rota a url : http://localhost:3000/teste.txt
+obs: a pasta public não entra no caminho da url
+
+duvidas - assista a aula 135 novamente

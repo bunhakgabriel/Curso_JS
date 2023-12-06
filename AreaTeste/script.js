@@ -1,35 +1,12 @@
-const mostrarResposta = () => {
-    const identElementClick = el.dataset.ident
+const btn_menu = document.getElementById('btn-menu')
+const mobileMenu = document.querySelector('.mobile-menu')
 
-    const identElementResp = 
-        document.querySelector(`[data-paragraph="${identElementClick}"]`)
+btn_menu.addEventListener('click', e => {
 
-
-    const arrayIdentElementResp = 
-        Array.from(document.querySelectorAll('.selectJs'))
-    
-    /*
-    arrayIdentElementResp.map( valor => {
-        if(valor.classList.contains('action')){
-            return valor.classList.remove('action')
-        }
-        return valor
-
-    })
-    */    
-
-    identElementResp.classList.toggle('action')
-
-}
-
-document.addEventListener('click', e => {
-    el = e.target
-
-    if(el.classList.contains('btn') || 
-       el.classList.contains('span') || 
-       el.classList.contains('fas')){
-        mostrarResposta()
-       }
+    if(mobileMenu.classList.contains('active')){
+        mobileMenu.classList.remove('active')
+    } else{
+        mobileMenu.classList.add('active')
+    }
 
 })
-

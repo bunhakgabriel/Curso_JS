@@ -3,146 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    <title>Document</title>
 </head>
 <body>
+    
+    <section>
+        
+        <header>
 
-    <section id="bloco5">
-        <h1>Dúvidas Frequentes:</h1>
+            <h3>AdriCosméticos</h3>
 
-    <div id="faq">    
-        <div class="faq-item">
+            <ul>
+                <a href="">
+                    <li class="atual">Home</li>
+                </a>
+                <a href="produtos.html">
+                    <li>Produtos</li>
+                </a>
+                <a href="#bloco9">
+                    <li>Como Chegar</li>
+                </a>
+                <a href="">
+                    <li class="fale-conosco">Fale conosco</li>
+                </a>
+            </ul>
 
-            <button data-ident="1" class="btn">
-                <span data-ident="1" class="span">O que esta incluido dentro do valor da hospedagem?</span>
-                <i data-ident="1" data-id="1" class="fas fa-angle-down"></i>
-            </button>
+            <div class="mobile-menu-icon">
+                <button id="btn-menu"><i class="fa-solid fa-bars fa-2xl"></i></button>
+            </div>
 
-            <p data-paragraph="1" class="faq-resp selectJs">
-                Toda equipe de enfermagem, composta por técnicos durante 24 horas, supervisão, enfermeiras,
-                médica, nutricionista, fisioterapias, musicoterapias, terapias ocupacionais, assistência social,
-                serviço de lavanderia e 06 refeições diárias.
-            </p>
-
+        </header>
+   
+        <div class="mobile-menu">
+            <ul>
+                <li class="home nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="serviços nav-item"><a href="#bloco5" class="nav-link">Faq</a></li>
+                <li class="acomodacoes nav-item"><a href="acomodacoes.html" class="nav-link">Acomodações</a></li>
+                <li class="contato nav-item"><a href="#footer" class="nav-link">Contato</a></li>
+                <li class="galeria nav-item"><a href="galeria.html" class="nav-link">Galeria</a></li>
+                <li class="rotas nav-item"><a href="#bloco6" class="nav-link">Rotas</a></li>
+            </ul>
         </div>
-
-        <div class="faq-item">
-            <button data-ident="2" class="btn">
-                <span data-ident="2" class="span">Os colaboradores passam por algum treinamento ou possuem cursos?</span>
-                <i data-ident="2" data-id="2" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="2" class="faq-resp selectJs">
-                Todos os nossos colaboradores possuem educação continuada, inclusive cursados.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="3" class="btn">
-                <span data-ident="3" class="span">Podemos visitar a instituição para conhecer?</span>
-                <i data-ident="3" data-id="3" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="3" class="faq-resp selectJs">
-                Sim, podem visitar com agendamento ou sem. Fica a seu critério.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="4" class="btn">
-                <span data-ident="4" class="span">Qual o custo para hospedar um idoso?</span>
-                <i data-ident="4" data-id="4" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="4" class="faq-resp selectJs">
-                Trabalhamos com diversos valores, pois temos acomodações diferenciadas, e os valores
-                oscilam conforme a demanda da vaga ou da exigência familiar.                     
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="5" class="btn">
-                <span data-ident="5" class="span">Qual o tipo de acomodação?</span>
-                <i data-ident="5" data-id="5" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="5" class="faq-resp selectJs">
-                Temos quartos individuais tipo suítes.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="6" class="btn">
-                <span data-ident="6" class="span">Se o hospede precisar de alimentações industrializada a instituição fornece?</span>
-                <i data-ident="6" data-id="6" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="6" class="faq-resp selectJs">
-                Não, este fornecimento será feito pela família do hóspede.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="7" class="btn">
-                <span data-ident="7" class="span">Se precisar sair com o residente, qual é o procedimento?</span>
-                <i data-ident="7" data-id="7" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="7" class="faq-resp selectJs">
-                Geralmente pedimos informar dia e horário com antecedência, pra que a equipe possa
-                acompanhar e organizar a saída.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="8" class="btn">
-                <span data-ident="8" class="span">Trabalham com ambos os sexos?</span>
-                <i data-ident="8" data-id="8" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="8" class="faq-resp selectJs">
-                Sim, a instituição é mista.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="9" class="btn">
-                <span data-ident="9" class="span">Vocês atendem pacientes com alta complexidade?</span>
-                <i data-ident="9" data-id="9" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="9" class="faq-resp selectJs">
-                Não, pois não temos estrutura de clinica.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="10" class="btn">
-                <span data-ident="10" class="span">Vocês atendem vaga para passar o dia (day use)?</span>
-                <i data-ident="10" data-id="10" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="10" class="faq-resp selectJs">
-                Sim, atendemos Day Use e também residência permanente. 
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="11" class="btn">
-                <span data-ident="11" class="span">Vocês possuem monitoramento por câmeras?</span>
-                <i data-ident="11" data-id="11" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="11" class="faq-resp selectJs">
-                temos sim em algumas áreas.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <button data-ident="12" class="btn">
-                <span data-ident="12" class="span">Vocês trabalham somente com pessoas idosas?</span>
-                <i data-ident="12" data-id="12" class="fas fa-angle-down"></i>
-            </button>
-            <p data-paragraph="12" class="faq-resp selectJs">
-                Sim. Apenas pessoas acima de 60 anos.
-            </p>
-        </div>
-    </div>
 
     </section>
-    
+
     <script src="script.js"></script>
+
 </body>
 </html>

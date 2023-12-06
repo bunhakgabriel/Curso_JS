@@ -7,7 +7,8 @@
 
 const express = require('express')
 const app = express()
-                                               
+        
+//Usamos esse middleware(função) para poder receber o req.body
 app.use(
     express.urlencoded(
         {
@@ -19,7 +20,8 @@ app.use(
 app.get('/', (req, res) => {
     res.send(`
         <form action="/" method="POST">
-        Nome do: <input type="text" name="nome">
+        Nome: <input type="text" name="nome"><br><br>
+        Sobrenome: <input type="text" name="sobrenome"><br><br>
         <button>Enviar formulario</button>
         </form>
     `)
@@ -27,13 +29,14 @@ app.get('/', (req, res) => {
 
 app.get('/testes/:idUsuarios?/:nomeUsuario?', (req, res) => {
     res.send(req.params)
-    console.log(req.params)
+    console.log(req.params) 
     console.log(req.query)
+    console.log(req.body)
 })
 
 app.post('/', (req, res) => {
     console.log(req.body)
-    res.send('Recebi o formulário')
+    res.send(req.body)
 })
 
 app.listen(3000, () => {

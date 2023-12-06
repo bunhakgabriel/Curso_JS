@@ -1,0 +1,13 @@
+body{
+    font-family: sans-serif;
+    background-color: wheat;
+}
+
+#container{
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 400px;
+    height: 500px;
+    background-color: darkcyan;
+}

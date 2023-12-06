@@ -1,5 +1,11 @@
-const Cachorro2 = require('./app')
+module.exports = class Cachorro{
+    constructor(nome){
+        this.nome = nome
+    }
 
-const cachorrinho = new Cachorro2('dog')
-cachorrinho.latir()
+    latir() {
+        console.log(`${this.nome} está fazendo au au`)
+    }
+}
+
 

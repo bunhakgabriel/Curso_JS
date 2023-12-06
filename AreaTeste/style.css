@@ -1,63 +1,129 @@
-#bloco5{
-    width: auto;
-    margin: 0 auto;
-    padding-bottom: 40px;
-    font-family: sans-serif;
-    text-align: center;
-    background-color: #0d1e4be0;
+body{
+  height: 5000px;
 }
 
-#faq{
-    width: 700px;
-    margin: 0 auto;
+header{
+  display: flex;
+  background-color: #F7819F;
+  justify-content: space-between;
 }
 
-#bloco5 h1{
-    color: white;
-    text-align: center;
-    font-size: 1.7em;
+header h3{
+  color: white;
+  margin: 0;
+  padding: 15px 30px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.7em;
 }
 
-.faq-item button{
-    width: 700px;
-    padding: 20px;
-    position: relative;
-    background-color: #0d1e4be0;
-    color: white;
-    border: 0px;
-    box-shadow: 1px 1px 3px black;
+header ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2em;
 }
 
-.faq-item button:hover{
+header ul a{
+  text-decoration: none;
+  color: white;
+
+}
+
+header ul li.atual{
+  border: 1px solid white;
+}
+
+header ul li{
+  padding: 10px 20px;
+  border: 1px solid #F7819F;
+}
+
+header ul li:hover{
+  border: 1px solid white;
+  transition: 0.5s;
+}
+
+header ul li.atual{
+  border: 1px solid white;
+}
+
+header .mobile-menu-icon{
+  padding: 20px 15px;
+  display: none;
+}
+
+header .mobile-menu-icon button{
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  border: 0px;
+}
+
+header .mobile-menu-icon i{
+  color: white;
+  font-size: 35px;
+}
+
+.mobile-menu{
+  display: none;
+  padding: 10px;
+  border-top: 1px solid white;
+  background-color: #F7819F;
+}
+
+.mobile-menu a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.mobile-menu ul{
+  padding: 0px;
+  text-align: center;
+  list-style: none;
+}
+
+.mobile-menu ul li{
+  padding: 5px;
+}
+
+.active{
+  display: block;
+}
+
+
+@media screen and (max-width: 840px){
+  header ul li{
+    padding: 5px 10px;
+  }
+  header h3{
+    font-size: 2.4em;
+  }
+}
+
+@media screen and (max-width: 740px){
+  header h3{
+    font-size: 2.2em;
+  }
+  header ul{
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 661px){
+  .active{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 660px){
+  header ul{
+    display: none;
+  }
+  header .mobile-menu-icon{
+    display: block;
+  }
+  header .mobile-menu-icon button:hover{
     cursor: pointer;
+  }
 }
-
-.faq-item button i{
-    position: absolute;
-    right: 15px;
-}
-
-.faq-item .faq-resp {
-    background-color: #f3f3f3;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-    margin: 0;
-  }
-  
-  .faq-item .action {
-    max-height: 10rem;
-    padding: 1rem;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .faq-item i{
-    transition: all 0.5s ease-in-out;
-  }
-
-  .faq-item i.rotate{
-    transform: rotate(180deg);
-  }
-
-
-
