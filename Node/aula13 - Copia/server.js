@@ -7,8 +7,23 @@
 // req.query = queryString da url
 // req.body = corpo da requisição
 
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
+
+mongoose.connect(process.env.CONNECTIONSTRING) //Estamos pegando o conteudo da variavel CONNECTIONSTRING do arquivo .env
+    .then( () => {
+        console.log('Conectei a base de dados')
+        app.emit('pronto')
+    })
+    .catch( () => {
+        console.log('Erro na conexão')
+    })
+
+//obs: se sua aplicação depende de uma base de dados é interessante você fazer essa conexão com a base antes de executar o servidor pois se o servidor é executado por primeiro e ocorre algum erro na base de dados, seus clientes terão porblemas para vizualizar as informações que estão no banco de dados
+
 const routes = require('./routes')
 const path = require('path')
 const meuMiddleware = require('./src/middlewares/middleware') //Middleware global
@@ -26,8 +41,10 @@ app.set('view engine', 'ejs') //precisamos instalar o ejs para usa-lo, (obs: pes
 app.use(meuMiddleware) //Execução do Middleware a nivel global, todas as requisições de todas as rotas vão passar nesse middleware
 app.use(routes)
 
-app.listen(3000, () => {
-    console.log('Acessar http://localhost:3000')
-    console.log('Servidor executando na porta 3000')
+app.on('pronto', () => {
+    app.listen(3000, () => {
+        console.log('Acessar http://localhost:3000')
+        console.log('Servidor executando na porta 3000')
+    })
 })
 
