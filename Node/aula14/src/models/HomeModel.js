@@ -1,14 +1,24 @@
-//Esse arquivo inteiro é novo na pasta 'aula14
-
 const mongoose = require('mongoose')
 
+//Crinado um esquema
 const HomeSchema = new mongoose.Schema({
-    titulo: String, //O dado 'titulo' será do tipo string e ele precisa obrigatoriamente ser enviado (required: true)
-    descricao: String
+    titulo: {type: String, required: true},
+    descricao: String 
+    //Podemos colocar Number, boolean, array e uma infinidade de types
 })
 
+//Criando um model              ('nome do model', 'esquema')  
 const HomeModel = mongoose.model('Home', HomeSchema)
 
-//Nesse exemplo vamos criar coisas na base de dados pra ver se esta tudo funcionando
+//Com esse model nós podemos selecionar coisas na base de dados, podemos criar coisas na base de dados e etc
+//Nesse projeto vamos apenas criar coisas para ver se esta tudo certo
 
-module.exports = HomeModel
+//Criando algo na base de dados
+//Vamos mandar os dados 'titulo' e 'descricao' do nosso HomeSchema
+//.create() retorna uma promise
+HomeModel.create({ //Basicamente estamos criandos atributos para as nossas propriedades que forao definidas no esquema e mandando elas para um banco de dados no mongoDb
+    titulo: 'titulo tetstdeyfcswf',
+    descricao: 'descricao sgdsfbdfzb'
+})
+    .then(dados => console.log(dados))
+    .catch(e => console.log(`ERROR:${e}`))

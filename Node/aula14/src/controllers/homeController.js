@@ -1,14 +1,8 @@
-const HomeModel = require('../models/HomeModel') //nova linha no preojeto
+const HomeModel = require('../models/HomeModel')
 
-HomeModel.create({                              //nova linha no preojeto
-    titulo: 'Um título de teste 1',
-    descricao: 'Uma descrição de teste 1'
-})
-    .then(dados => console.log(dados))
-    .catch(e => console.log(`ERROR: ${e}`))
-
-exports.paginaInicial = (req, res) => {
+exports.paginaInicial = (req, res, next) => {
     res.render('index')
+    next()
 }
 
 exports.trataPost = (req, res) => {
