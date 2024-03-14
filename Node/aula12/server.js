@@ -15,6 +15,9 @@ app.use( express.urlencoded({extended: true}))
 app.use(express.static(path.resolve(__dirname, 'public'))) //Esse vai ser o conteudo estatico do nosso front-end, ele esta na pasta public, para renderizalo usamos 'express.static(caminho)'
 //Conteudo estatico é aquilo que todos os usuarios irao ver no servidor
 
+const middleware = require('./middleware')
+app.use(middleware)
+
 app.set('views', path.resolve(__dirname, 'src', 'views')) //Esse é o caminho absoluto da pasta views, nós não precisariamos necessariamente usar o 'path', poderia ser feito de outra forma
 app.set('view engine', 'ejs') //precisamos instalar o ejs para usa-lo, (obs: pesquisar sobre views engine e ejs)
 

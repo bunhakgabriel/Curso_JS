@@ -1,0 +1,14 @@
+Um código assíncrono leva um tempo para ser executado, e pode ser bem sucedido ou não
+    Ex: Chamadas para APIs
+        Interações com banco de dados
+
+Há 3 maneiras de lidar com esse tipo de código
+    -Callbacks
+    -Promises
+    -Promises com Async/Await
+
+-O javascript por natureza quando ve um código assincrono sendo executado,
+ele nao espera a execução desse código, ele continua sua linha de comando para que os comandos
+nao fiquem travados esperando a execução do código assincrono
+
+-normalmente você não vai criar promises, você vai usar recursos/funções que retornam promises
