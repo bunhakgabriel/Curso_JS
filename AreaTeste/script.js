@@ -1,71 +1,31 @@
-const myObserver = new IntersectionObserver((entries) => {
-    entries.forEach( entry =>{
-        if(entry.isIntersecting){
-            entry.target.classList.add('show')
-        } else {
-            entry.target.classList.remove('show')
-        }
-    } ) 
-});
+let cpf = '03755264986'
+let num = ['0','1','2','3','4','5','6','7','8','9']
+let chave = new Array
+let cpfCriptografado = new Array
+let cpfDescriptografado = new Array
 
-const elements = document.querySelectorAll('.hidden')
+// Array original com 20 elementos
+const arrayOriginal = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
-elements.forEach( element => {
-    myObserver.observe(element)
-} )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Código digitação automatica
-/*
-let h1 = document.getElementById("titulo")
-
-
-let letras = ['S','e','j','a',' ','B','e','m','-','V','i','n','d','o',' ','G','a','b','r','i','e','l']
-
-let i = 0
-
-const pararExecucao = (i) => {
-    if(i >= letras.length){
-        h1.innerText = h1.innerText.slice(0,i)
-        clearInterval(escrever)
-    }
+// Função para ordenar aleatoriamente um array e retornar os primeiros 10 elementos
+function sortear10Elementos(array) {
+    const arrayEmbaralhado = array.sort(() => Math.random() - 0.5);
+    return arrayEmbaralhado.slice(0, 11);
 }
 
-//const str = 'Hello, world!';
-//const cortada = str.slice(7, 12);
-//console.log(cortada); // Saída: "world"
+// Sortear 10 elementos aleatórios do array original
+const el = sortear10Elementos(arrayOriginal);
 
-const escrever = setInterval(() => {
+let c = 0
+for(let e of el){
+    chave.push([cpf[c],e])
+    c++
+}
 
-    h1.innerText = h1.innerText.slice(0,i) + letras[i] + "|" 
+let i = 0
+for(let e of el){
+    if(e == chave[i][1]) cpfDescriptografado.push(chave[i][0])
     i++
+}
 
-    let span = document.getElementById("span")
-    pararExecucao(i)
-
-}, 250)
-
-escrever()
-*/
+export default cpf
